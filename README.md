@@ -1,12 +1,14 @@
 SirTET
 ======
 
-SirTET aims to become a "reverse Tetris". It has two interfaces: A
-terminal interface, using
+SirTET aims to become a "reverse Tetris": You get a field with bricks,
+and have to try to find reverse Tetris moves (removing tetrominos,
+adding lines) to remove all bricks. It is at a very early stage of
+development - there is only one Level, and it likely contains bugs.
+
+It has two interfaces: A terminal interface, using
 [LibLanterna](https://code.google.com/p/lanterna/downloads/detail?name=lanterna-2.1.7.jar),
-and a Braille-Interface, using [BrlAPI](http://mielke.cc/brltty/). It
-is at a very early stage of development - there is only one Level, and
-it likely contains bugs.
+and a Braille-Interface, using [BrlAPI](http://mielke.cc/brltty/).
 
 To run it under Ubuntu 14.04 (and probably other Debian-derivatives), the Packages default-jre and
 libbrlapi-java are required to run it. Furthermore, [Lanterna
