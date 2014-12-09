@@ -69,12 +69,11 @@ CursesDisplay::CursesDisplay (int transx, int transy, int width, int height) :
     }
   }
 
-  notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read);
+  notifier = new QSocketNotifier(STDIN_FILENO, QSocketNotifier::Read, this);
   connect(notifier, SIGNAL(activated(int)), this, SLOT(readyToRead()));
 }
 
 CursesDisplay::~CursesDisplay () {
-  notifier->deleteLater();
   endwin();
 }
 

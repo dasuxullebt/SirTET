@@ -29,6 +29,7 @@ int main (int argc, char** argv) {
     QObject::connect(&field, SIGNAL(setPixel(int,int,Color)), bdisp, SLOT(setPixel(int,int,Color)));
     QObject::connect(&field, SIGNAL(notice(const std::string&)), bdisp, SLOT(notice(const std::string&)));
     QObject::connect(&field, SIGNAL(refresh()), bdisp, SLOT(refresh()));
+    QObject::connect(bdisp, SIGNAL(keyStroke(Key)), &field, SLOT(keyStroke(Key)));
   } catch (...) {
     cerr << "Could not open braille device" << endl;
   }

@@ -1,0 +1,2 @@
+* Program freezes when Braille Terminal disconnects.
+

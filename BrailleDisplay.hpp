@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QTimer>
 #include <brlapi.h>
+#include <QSocketNotifier>
 
 #include "Display.hpp"
 
@@ -15,9 +16,16 @@ private:
   int cline = 0;
   int cblink = 0;
   QTimer timer;
+  QSocketNotifier* notifier;
   brlapi_fileDescriptor fd;
-  brlapi_connectionSettings_t settings;
+  brlapi_connectionSettings_t brl_settings;
   brlapi_handle_t* bh;
+
+  brlapi_keyCode_t key_up, key_down, key_left, key_right,
+    key_rotate, key_undo, key_quit, key_nextstone,
+    key_domove;
+
+
   int width, height;
   void nextLine() {
     if (++cline > height) --cline;
@@ -35,10 +43,14 @@ private:
   void blinkreset () {
     this->cblink = 0;
   }
+  void loadConfiguration();
 
 public:
   BrailleDisplay40 (int width, int height, bool fill, QObject * parent = 0);
   ~BrailleDisplay40 ();
+
+signals:
+  void keyStroke(Key k);
 
 public slots:
   void setPixel (int x, int y, Color color);
@@ -51,4 +63,5 @@ public slots:
     cblink = (cblink+1)%4;
     refresh();
   }
+  void readyToRead ();
 };
