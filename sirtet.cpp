@@ -56,35 +56,4 @@ int main (int argc, char** argv) {
   field.draw();
 
   a.exec();
-
-  /*  while(1) {
-    int c = cdisp->getKey();
-    if (c == cdisp->key_up) {
-      field.prevRow();
-    } else if (c == cdisp->key_down) {
-      field.nextRow();
-    } else if (c == cdisp->key_left) {
-      field.prevCol();
-    } else if (c == cdisp->key_right) {
-      field.nextCol();
-    } else if (c == cdisp->key_undo) {
-      field.undoMove();
-    } else if (c == cdisp->key_rotate) {
-      field.nextRotation();
-    } else if (c == cdisp->key_nextstone) {
-      field.nextStone();
-    } else if (c == cdisp->key_domove) {
-      field.doMove();
-    } else if (c == cdisp->key_quit) {
-      return 0;
-    } else if (c == 338) {
-      if(bdisp) bdisp->nextLine();
-    } else if (c == 339) {
-      if(bdisp) bdisp->prevLine();
-    }
-    if(bdisp) bdisp->tick();
-    field.draw();
-    cdisp->refresh();
-    if(bdisp) bdisp->refresh();
-    }*/
 }
