@@ -1,6 +1,10 @@
 SirTET
 ======
 
+**I am switching to C++ and Qt - the following only applies to the
+  Java version. A more detailled description of the Qt version will
+  follow.**
+
 SirTET aims to become a "reverse Tetris": You get a field with bricks,
 and have to try to find reverse Tetris moves (removing tetrominos,
 adding lines) to remove all bricks. It is at a very early stage of
