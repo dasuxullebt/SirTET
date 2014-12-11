@@ -3,6 +3,7 @@
 #include "GameState.hpp"
 #include "Display.hpp"
 #include <string>
+#include <map>
 #include <QChar>
 #include <QSocketNotifier>
 

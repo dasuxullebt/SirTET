@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include <iostream>
 #include <QSettings>
+#include <QTextCodec>
 #include <unistd.h>
 #include "CursesDisplay.hpp"
 
@@ -17,7 +18,6 @@ void CursesDisplay::loadConfig() {
   key_quit = settings.value("curses/key/quit", 27).toInt();
   key_nextstone = settings.value("curses/key/nextstone", 9).toInt();
   key_domove = settings.value("curses/key/domove", 13).toInt();
-  //TODO  tick = settings.value("braille/tick", 2).toInt();
 
   stone_fits_full = settings.value("curses/ui/stone_fits_full", stone_fits_full).toChar();
   stone_fits_empty = settings.value("curses/ui/stone_fits_empty", stone_fits_empty).toChar();
